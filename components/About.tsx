@@ -81,6 +81,7 @@ export default function About() {
                     src="/images/avatar.jpg"
                     alt="Pham Quoc Hung"
                     fill
+                    sizes="208px"
                     className="object-cover object-center"
                     priority
                   />
