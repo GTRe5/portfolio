@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap");
 
 :root {
   --font-mono: "Space Mono", monospace;
@@ -208,7 +208,7 @@ body {
     opacity 0.8s ease,
     transform 0.8s ease;
 }
-.section-reveal.visible {
+.visible .section-reveal {
   opacity: 1;
   transform: translateY(0);
 }
