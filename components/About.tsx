@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 const traits = [
   { icon: '📊', label: 'Data-Driven', desc: 'Every decision backed by evidence' },
@@ -76,12 +77,13 @@ export default function About() {
               <div className="relative w-52 h-52">
                 <div className="absolute inset-0 rounded-2xl border border-[#00e5ff]/20 rotate-6 bg-[#00e5ff]/5" />
                 <div className="absolute inset-0 rounded-2xl border border-[#1e2d3d] bg-[#0d1117] flex items-center justify-center overflow-hidden">
-                  <div className="text-center">
-                    <div className="font-display font-extrabold text-6xl text-[#00e5ff]/20 select-none">
-                      NCP
-                    </div>
-                    <div className="font-mono text-xs text-[#2a3f55] mt-1 tracking-widest">GTRe5</div>
-                  </div>
+                  <Image
+                    src="/images/avatar.jpg"
+                    alt="Pham Quoc Hung"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
                 </div>
                 {/* Corner decorations */}
                 <div className="absolute -top-1 -left-1 w-3 h-3 border-t border-l border-[#00e5ff]" />
