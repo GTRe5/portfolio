@@ -3,6 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Pham Quoc Hung (GTRe5) — Data Enthusiast",
+  icons: {
+    icon : "/images/favicon.ico"
+  },
   description:
     "Portfolio of Hung Pham — Data Analyst & BI Developer turning raw data into actionable insights.",
   keywords: [
