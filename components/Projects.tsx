@@ -3,13 +3,13 @@
 const projects = [
   {
     id: '01',
-    title: 'Sales Intelligence Dashboard',
-    desc: 'End-to-end Power BI dashboard tracking $50M+ in revenue across 12 regions. Features real-time alerts, YoY comparisons, and drill-through analysis.',
-    tags: ['Power BI', 'SQL', 'DAX', 'Azure'],
-    impact: '+23% faster reporting',
-    type: 'Business Intelligence',
+    title: 'HaGRID Hand Gesture Recognition',
+    desc: 'Real-time hand gesture classifier trained on the HaGRID dataset (34 classes) using EfficientNet-B0 via timm. Includes EDA notebook, fine-tuning pipeline, and a live webcam demo with a styled HUD overlay.',
+    tags: ['Python', 'PyTorch', 'EfficientNet-B0', 'HuggingFace', 'OpenCV'],
+    impact: '34 gesture classes',
+    type: 'Computer Vision / ML',
     color: '#00e5ff',
-    link: '#',
+    link: 'https://github.com/GTRe5/Hagrid-Gesture-Recognition',
   },
   {
     id: '02',
