@@ -7,7 +7,7 @@ const projects = [
     desc: 'Real-time hand gesture classifier trained on the HaGRID dataset (34 classes) using EfficientNet-B0 via timm. Includes EDA notebook, fine-tuning pipeline, and a live webcam demo with a styled HUD overlay.',
     tags: ['Python', 'PyTorch', 'EfficientNet-B0', 'HuggingFace', 'OpenCV'],
     impact: '34 gesture classes',
-    type: 'Computer Vision / ML',
+    type: 'Computer Vision / DL',
     color: '#00e5ff',
     link: 'https://github.com/GTRe5/Hagrid-Gesture-Recognition',
   },
