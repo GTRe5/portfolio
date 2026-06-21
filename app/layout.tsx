@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pham Quoc Hung (GTRe5) — Data Enthusiast",
+  title: "Pham Quoc Hung (GTRe5) - Data Enthusiast",
   icons: {
     icon : "/images/favicon.ico"
   },
   description:
-    "Portfolio of Hung Pham — Data Analyst & BI Developer turning raw data into actionable insights.",
+    "Portfolio of Hung Pham - Data Analyst & BI Developer turning raw data into actionable insights.",
   keywords: [
     "Data Analyst",
     "Business Intelligence",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Data Science",
   ],
   openGraph: {
-    title: "Pham Quoc Hung (GTRe5) — Data Enthusiast",
+    title: "Pham Quoc Hung (GTRe5) - Data Enthusiast",
     description: "Turning raw data into actionable insights.",
     type: "website",
   },

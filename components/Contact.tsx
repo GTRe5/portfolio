@@ -104,7 +104,7 @@ export default function Contact() {
         </div>
         <p className="text-[#4a6380] font-mono text-sm mb-16 max-w-xl">
           // Whether it's a data challenge, a collaboration idea, or just a chat
-          about dashboards — I'd love to hear from you.
+          about dashboards - I'd love to hear from you.
         </p>
 
         <div className="grid lg:grid-cols-2 gap-12">

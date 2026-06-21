@@ -4,11 +4,11 @@ const experiences = [
   {
     role: 'Senior Data Analyst',
     company: 'TechCorp Vietnam',
-    period: '2022 — Present',
+    period: '2022 - Present',
     location: 'Ho Chi Minh City',
     description: 'Lead analytics for the e-commerce division. Own the data stack from ingestion (Airflow + BigQuery) to visualization (Looker). Mentor 2 junior analysts.',
     highlights: [
-      'Rebuilt reporting infrastructure — cut dashboard load time by 70%',
+      'Rebuilt reporting infrastructure - cut dashboard load time by 70%',
       'Built churn prediction model saving $1.2M annually',
       'Automated 40+ manual Excel reports into live dashboards',
     ],
@@ -17,7 +17,7 @@ const experiences = [
   {
     role: 'Data Analyst',
     company: 'Saigon Fintech',
-    period: '2020 — 2022',
+    period: '2020 - 2022',
     location: 'Ho Chi Minh City',
     description: 'Supported financial analytics across lending and payments. Built risk scoring models and regulatory reporting pipelines for the compliance team.',
     highlights: [
@@ -30,7 +30,7 @@ const experiences = [
   {
     role: 'Business Intelligence Intern',
     company: 'Digital Agency Co.',
-    period: '2019 — 2020',
+    period: '2019 - 2020',
     location: 'Ho Chi Minh City',
     description: 'First exposure to real-world data work. Supported marketing analytics for 20+ client campaigns, built Tableau dashboards, and learned SQL from scratch.',
     highlights: [
@@ -46,8 +46,8 @@ const education = [
   {
     degree: 'B.Sc. Information Systems',
     school: 'University of Economics HCMC',
-    period: '2015 — 2019',
-    note: 'GPA: 3.6 / 4.0 — Dean\'s List',
+    period: '2015 - 2019',
+    note: 'GPA: 3.6 / 4.0 - Dean\'s List',
   },
   {
     degree: 'Google Data Analytics Certificate',
