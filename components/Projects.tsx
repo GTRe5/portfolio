@@ -13,7 +13,7 @@ const projects = [
   },
   {
     id: '02',
-    title: 'PixelNarrator — Image Captioning',
+    title: 'PixelNarrator - Image Captioning',
     desc: 'End-to-end image captioning system trained on MS COCO 2017. CNN encoder (ResNet-50) + LSTM decoder with Bahdanau attention, rendering per-word heat-maps that show where the model looks when generating each token. Interactive Gradio demo included.',
     tags: ['Python', 'PyTorch', 'ResNet-50', 'LSTM', 'Gradio', 'MS COCO'],
     impact: '4 ablation models',
@@ -23,8 +23,8 @@ const projects = [
   },
   {
     id: '03',
-    title: 'TrendScope — GitHub Trending Dashboard',
-    desc: 'Real-time GitHub Trending dashboard with zero API keys — scrapes live data via BeautifulSoup4 and visualises daily star rankings with interactive Plotly bar charts. Deployed publicly via ngrok with a custom dark-orange themed Streamlit UI and KPI strip.',
+    title: 'TrendScope - GitHub Trending Dashboard',
+    desc: 'Real-time GitHub Trending dashboard with zero API keys - scrapes live data via BeautifulSoup4 and visualises daily star rankings with interactive Plotly bar charts. Deployed publicly via ngrok with a custom dark-orange themed Streamlit UI and KPI strip.',
     tags: ['Python', 'Streamlit', 'Plotly', 'BeautifulSoup4', 'ngrok'],
     impact: 'Live Data',
     type: 'Data / Dashboard',
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     id: '04',
-    title: 'Snipline — Real-Time URL Shortener',
+    title: 'Snipline - Real-Time URL Shortener',
     desc: 'Real-time URL shortener built with Next.js 16 (App Router) and TypeScript. Server Components handle short-code generation and click-tracked redirects, backed by Upstash Redis (with an automatic in-memory fallback in dev) and client-side polling that syncs the link ledger live across tabs and devices. Custom aliases, per-IP rate limiting, and a flicker-free dark/light theme included.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Upstash Redis'],
     impact: 'Live Click Tracking',
@@ -44,7 +44,7 @@ const projects = [
   {
     id: '05',
     title: 'Project Coming Soon',
-    desc: 'This project is currently in progress. Stay tuned — details and source code will be published here once complete.',
+    desc: 'This project is currently in progress. Stay tuned - details and source code will be published here once complete.',
     tags: ['In Progress'],
     impact: 'WIP',
     type: 'Coming Soon',
@@ -55,7 +55,7 @@ const projects = [
   {
     id: '06',
     title: 'Project Coming Soon',
-    desc: 'This project is currently in progress. Stay tuned — details and source code will be published here once complete.',
+    desc: 'This project is currently in progress. Stay tuned - details and source code will be published here once complete.',
     tags: ['In Progress'],
     impact: 'WIP',
     type: 'Coming Soon',
