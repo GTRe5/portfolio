@@ -39,17 +39,17 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left — text */}
+          {/* Left - text */}
           <div className="space-y-6 section-reveal">
             <p className="text-[#c9d8e8] leading-relaxed text-lg">
               Hi, I'm{' '}
-              <span className="text-[#00e5ff] font-semibold">GTRe5</span> — a Data Enthusiast
+              <span className="text-[#00e5ff] font-semibold">GTRe5</span> - a Data Enthusiast
               based in{' '}
               <span className="text-[#ffb300]">Ho Chi Minh City, Vietnam</span>. I specialize in
               turning messy, raw data into clean insights that help teams make smarter decisions.
             </p>
             <p className="text-[#4a6380] leading-relaxed">
-              My journey started with a curiosity about <em>why</em> things happen — not just
+              My journey started with a curiosity about <em>why</em> things happen - not just
               <em>what</em>. That curiosity led me deep into SQL, Python, and BI tools. Today, I
               build end-to-end data solutions: from ingestion pipelines to executive dashboards.
             </p>
@@ -70,7 +70,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right — avatar + traits */}
+          {/* Right - avatar + traits */}
           <div className="section-reveal">
             {/* Avatar placeholder */}
             <div className="relative mb-8 flex justify-center">
