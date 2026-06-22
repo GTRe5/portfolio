@@ -1,4 +1,5 @@
 'use client'
+import { ArrowUpRight, ArrowRight } from 'lucide-react'
 
 const projects = [
   {
@@ -140,8 +141,8 @@ export default function Projects() {
               </div>
 
               {/* Arrow */}
-              <div className="absolute bottom-6 right-6 text-[#4a6380] group-hover:text-[#00e5ff] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 text-sm">
-                ↗
+              <div className="absolute bottom-6 right-6 text-[#4a6380] group-hover:text-[#00e5ff] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+                <ArrowUpRight size={16} />
               </div>
             </a>
           ))}
@@ -155,7 +156,7 @@ export default function Projects() {
             className="inline-flex items-center gap-2 font-mono text-sm text-[#4a6380] hover:text-[#00e5ff] transition-colors duration-300 border border-[#1e2d3d] px-6 py-3 rounded hover:border-[#00e5ff]/40"
           >
             <span>View all on GitHub</span>
-            <span>→</span>
+            <ArrowRight size={14} />
           </a>
         </div>
       </div>

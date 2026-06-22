@@ -1,4 +1,5 @@
 'use client'
+import { ChevronRight, GraduationCap, Award, Languages } from 'lucide-react'
 
 const experiences = [
   {
@@ -88,7 +89,7 @@ export default function Experience() {
                   <ul className="space-y-2 mb-4">
                     {exp.highlights.map((h, j) => (
                       <li key={j} className="flex gap-2 text-sm text-[#2a3f55] italic">
-                        <span className="text-[#00e5ff]/30 mt-0.5 flex-shrink-0">▸</span>
+                        <ChevronRight size={14} className="text-[#00e5ff]/30 mt-0.5 flex-shrink-0" />
                         {h}
                       </li>
                     ))}
@@ -110,7 +111,7 @@ export default function Experience() {
           <div>
             {/* Education */}
             <h3 className="font-display font-semibold text-lg text-white mb-6 flex items-center gap-2">
-              <span className="text-[#ffb300]">◆</span> Education
+              <GraduationCap size={18} className="text-[#ffb300]" /> Education
             </h3>
             <div className="space-y-4 mb-8">
               {education.map((edu) => (
@@ -123,7 +124,7 @@ export default function Experience() {
                   <ul className="space-y-1">
                     {edu.coursework.map((c) => (
                       <li key={c} className="flex gap-1.5 font-mono text-[10px] text-[#4a6380]">
-                        <span className="text-[#ffb300]/50 flex-shrink-0">▸</span>
+                        <ChevronRight size={11} className="text-[#ffb300]/50 flex-shrink-0 mt-0.5" />
                         {c}
                       </li>
                     ))}
@@ -134,7 +135,7 @@ export default function Experience() {
 
             {/* Honors & Awards */}
             <h3 className="font-display font-semibold text-lg text-white mb-4 flex items-center gap-2">
-              <span className="text-[#a78bfa]">◆</span> Honors & Awards
+              <Award size={18} className="text-[#a78bfa]" /> Honors & Awards
             </h3>
             <div className="space-y-3 mb-8">
               {awards.map((award, i) => (
@@ -162,7 +163,7 @@ export default function Experience() {
 
             {/* Languages */}
             <h3 className="font-display font-semibold text-lg text-white mb-4 flex items-center gap-2">
-              <span className="text-[#00e5ff]">◆</span> Languages
+              <Languages size={18} className="text-[#00e5ff]" /> Languages
             </h3>
             <div className="space-y-3">
               {[
