@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
+import type { CSSProperties } from 'react'
 import Image from 'next/image'
 import { TrendingUp, ScanSearch, Zap, Users } from 'lucide-react'
 
@@ -119,7 +120,8 @@ export default function About() {
               {traits.map((t) => (
                 <div
                   key={t.label}
-                  className="border border-[#1e2d3d] bg-[#0d1117]/60 rounded-lg p-4 card-hover"
+                  className="group border border-[#1e2d3d] bg-[#0d1117]/60 rounded-lg p-4 card-hover transition-colors duration-300 hover:border-[var(--accent)]"
+                  style={{ '--accent': t.color } as CSSProperties}
                 >
                   <div
                     className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
@@ -131,7 +133,9 @@ export default function About() {
                   >
                     <t.icon size={17} color={t.color} strokeWidth={1.8} />
                   </div>
-                  <div className="font-display font-semibold text-sm text-[#c9d8e8] mb-1">{t.label}</div>
+                  <div className="font-display font-semibold text-sm text-[#c9d8e8] mb-1 transition-colors duration-300 group-hover:text-[var(--accent)]">
+                    {t.label}
+                  </div>
                   <div className="font-mono text-[11px] text-[#4a6380]">{t.desc}</div>
                 </div>
               ))}

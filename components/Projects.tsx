@@ -1,4 +1,5 @@
 'use client'
+import type { CSSProperties } from 'react'
 import { ArrowUpRight, ArrowRight } from 'lucide-react'
 
 const projects = [
@@ -86,12 +87,13 @@ export default function Projects() {
             <a
               key={project.id}
               href={project.link}
-              className="group border border-[#1e2d3d] bg-[#0d1117] rounded-xl p-6 card-hover flex flex-col relative overflow-hidden"
+              className="group border border-[#1e2d3d] bg-[#0d1117] rounded-xl p-6 card-hover flex flex-col relative overflow-hidden transition-colors duration-300 hover:border-[var(--accent)]"
+              style={{ '--accent': project.color } as CSSProperties}
             >
               {/* Top accent */}
               <div
                 className="absolute top-0 left-0 right-0 h-px transition-all duration-300 group-hover:opacity-100 opacity-0"
-                style={{ background: `linear-gradient(90deg, transparent, ${project.color}, transparent)` }}
+                style={{ background: 'linear-gradient(90deg, transparent, var(--accent), transparent)' }}
               />
 
               {/* Header row */}
@@ -118,10 +120,7 @@ export default function Projects() {
               </div>
 
               {/* Title */}
-              <h3
-                className="font-display font-bold text-lg text-white mb-3 group-hover:transition-colors duration-300"
-                style={{ color: undefined }}
-              >
+              <h3 className="font-display font-bold text-lg text-white mb-3 transition-colors duration-300 group-hover:text-[var(--accent)]">
                 {project.title}
               </h3>
 
@@ -141,7 +140,7 @@ export default function Projects() {
               </div>
 
               {/* Arrow */}
-              <div className="absolute bottom-6 right-6 text-[#4a6380] group-hover:text-[#00e5ff] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
+              <div className="absolute bottom-6 right-6 text-[#4a6380] group-hover:text-[var(--accent)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">
                 <ArrowUpRight size={16} />
               </div>
             </a>

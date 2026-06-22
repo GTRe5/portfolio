@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import {
   Mail,
   ArrowRight,
@@ -304,7 +305,8 @@ export default function Contact() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-4 border border-[#1e2d3d] bg-[#0d1117] rounded-lg card-hover group"
+                      className="flex items-center gap-4 p-4 border border-[#1e2d3d] bg-[#0d1117] rounded-lg card-hover group transition-colors duration-300 hover:border-[var(--accent)]"
+                      style={{ '--accent': link.color } as CSSProperties}
                     >
                       <span
                         className="w-10 h-10 rounded-lg flex items-center justify-center border flex-shrink-0"
@@ -329,7 +331,7 @@ export default function Contact() {
                       </div>
                       <ArrowRight
                         size={16}
-                        className="ml-auto text-[#4a6380] group-hover:text-[#00e5ff] group-hover:translate-x-0.5 transition-all flex-shrink-0"
+                        className="ml-auto text-[#4a6380] group-hover:text-[var(--accent)] group-hover:translate-x-0.5 transition-all flex-shrink-0"
                       />
                     </a>
                   );

@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import type { CSSProperties } from 'react'
 
 const categories = [
   {
@@ -113,7 +114,8 @@ export default function Skills() {
           {categories.map((cat) => (
             <div
               key={cat.label}
-              className="border border-[#1e2d3d] bg-[#111820] rounded-xl p-6 card-hover"
+              className="border border-[#1e2d3d] bg-[#111820] rounded-xl p-6 card-hover transition-colors duration-300 hover:border-[var(--accent)]"
+              style={{ '--accent': cat.color } as CSSProperties}
             >
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
