@@ -57,37 +57,23 @@ export default function Contact() {
     setLoading(true);
     setError(false);
 
-    const payload = {
-      // Emoji-prefixed keys → cleaner email layout in inbox
-      "👤 Name":    form.name,
-      "📧 Email":   form.email,
-      "📌 Subject": form.subject || "No subject",
-      "💬 Message": form.message,
-      // Formspree magic fields
-      _subject: `[Portfolio] ${form.subject || "New message"} from ${form.name}`,
-      _replyto: form.email,
-    };
-
     try {
-      const res = await fetch("https://formspree.io/f/xdapgeae", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
       if (res.ok) {
-        setSent(true);
+        setSent(true)
       } else {
-        setError(true);
+        setError(true)
       }
     } catch {
-      setError(true);
+      setError(true)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <section id="contact" className="py-28 relative">

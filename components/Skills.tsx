@@ -3,41 +3,62 @@ import { useEffect, useRef, useState } from 'react'
 
 const categories = [
   {
-    label: 'Data & Analytics',
+    label: 'AI & Machine Learning',
     color: '#00e5ff',
     skills: [
-      { name: 'SQL / PostgreSQL', level: 95 },
-      { name: 'Python (pandas, numpy)', level: 88 },
-      { name: 'Excel / Google Sheets', level: 90 },
-      { name: 'Statistical Analysis', level: 82 },
+      { name: 'PyTorch', level: 90 },
+      { name: 'Scikit-learn', level: 85 },
+      { name: 'XGBoost / LightGBM / CatBoost', level: 80 },
+      { name: 'TensorFlow', level: 74 },
     ],
   },
   {
-    label: 'Visualization & BI',
-    color: '#ffb300',
+    label: 'Computer Vision & Deep Learning',
+    color: '#f97316',
     skills: [
-      { name: 'Power BI', level: 92 },
-      { name: 'Tableau', level: 85 },
-      { name: 'Looker / Looker Studio', level: 78 },
-      { name: 'Matplotlib / Seaborn', level: 80 },
+      { name: 'EfficientNet-B0 / ResNet-50 (timm)', level: 87 },
+      { name: 'YOLOv8 / Object Detection', level: 85 },
+      { name: 'OpenCV / EasyOCR', level: 83 },
+      { name: 'CNN / LSTM / Attention', level: 80 },
     ],
   },
   {
-    label: 'Engineering & Cloud',
+    label: 'Data Engineering & MLOps',
     color: '#a78bfa',
     skills: [
-      { name: 'dbt (Data Build Tool)', level: 75 },
-      { name: 'Airflow / ETL Pipelines', level: 70 },
-      { name: 'Google BigQuery', level: 82 },
-      { name: 'AWS / GCP Basics', level: 65 },
+      { name: 'Python / Pandas / NumPy', level: 92 },
+      { name: 'Streamlit / Gradio / Docker', level: 82 },
+      { name: 'Flask / FastAPI / MLflow', level: 80 },
+      { name: 'SQL / R / Power BI', level: 75 },
     ],
   },
 ]
 
 const tools = [
-  'Python', 'SQL', 'Power BI', 'Tableau', 'dbt', 'BigQuery',
-  'Airflow', 'Git', 'Jupyter', 'Pandas', 'NumPy', 'Scikit-learn',
-  'Excel', 'Looker', 'Redshift', 'Snowflake', 'Databricks', 'Spark',
+  // Languages
+  'Python', 'SQL', 'R',
+  // AI / ML
+  'PyTorch', 'TensorFlow', 'Scikit-learn', 'XGBoost', 'LightGBM', 'CatBoost',
+  // CV & DL architectures
+  'YOLOv8', 'EfficientNet-B0', 'ResNet-50', 'OpenCV', 'EasyOCR', 'HuggingFace', 'timm',
+  // Sequence / NLP
+  'CNN', 'LSTM', 'NLP', 'Attention Mechanisms',
+  // Data & Viz
+  'Pandas', 'NumPy', 'Power BI', 'Matplotlib', 'Seaborn', 'Plotly', 'BeautifulSoup4',
+  // MLOps & Deployment
+  'Flask', 'FastAPI', 'MLflow', 'Docker', 'Streamlit', 'Gradio', 'ngrok',
+  // Dev Tools
+  'Git', 'Jupyter', 'VSCode', 'Linux', 'Excel',
+  // Web
+  'Next.js', 'TypeScript', 'Tailwind CSS',
+]
+
+const softSkills = [
+  'Analytical Thinking',
+  'Problem Solving',
+  'Team Collaboration',
+  'Result-oriented Leadership',
+  'Time Management',
 ]
 
 function SkillBar({ name, level, color, animate }: { name: string; level: number; color: string; animate: boolean }) {
@@ -129,6 +150,23 @@ export default function Skills() {
                 style={{ animationDelay: `${i * 0.05}s` }}
               >
                 {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Soft Skills */}
+        <div className="mt-6 border border-[#1e2d3d] bg-[#111820] rounded-xl p-8">
+          <p className="font-mono text-xs text-[#4a6380] tracking-widest uppercase mb-6">
+            Soft Skills
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {softSkills.map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1.5 border border-[#a78bfa]/20 bg-[#a78bfa]/5 font-mono text-xs text-[#a78bfa]/80 rounded hover:border-[#a78bfa]/50 hover:text-[#a78bfa] transition-all duration-200 cursor-default"
+              >
+                {skill}
               </span>
             ))}
           </div>

@@ -3,10 +3,55 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const traits = [
-  { icon: '📊', label: 'Data-Driven', desc: 'Every decision backed by evidence' },
-  { icon: '🔍', label: 'Detail-Oriented', desc: 'Finding patterns others miss' },
-  { icon: '🚀', label: 'Impact-Focused', desc: 'Building things that matter' },
-  { icon: '🤝', label: 'Collaborative', desc: 'Cross-functional team player' },
+  {
+    icon: (color: string) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+        <polyline points="16 7 22 7 22 13" />
+      </svg>
+    ),
+    color: '#00e5ff',
+    label: 'Data-Driven',
+    desc: 'Every decision backed by evidence',
+  },
+  {
+    icon: (color: string) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 7V5a2 2 0 0 1 2-2h2" />
+        <path d="M17 3h2a2 2 0 0 1 2 2v2" />
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
+        <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="m16 16-1.9-1.9" />
+      </svg>
+    ),
+    color: '#ffb300',
+    label: 'Detail-Oriented',
+    desc: 'Finding patterns others miss',
+  },
+  {
+    icon: (color: string) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
+    color: '#a78bfa',
+    label: 'Impact-Focused',
+    desc: 'Building things that matter',
+  },
+  {
+    icon: (color: string) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    color: '#34d399',
+    label: 'Collaborative',
+    desc: 'Cross-functional team player',
+  },
 ]
 
 export default function About() {
@@ -101,7 +146,16 @@ export default function About() {
                   key={t.label}
                   className="border border-[#1e2d3d] bg-[#0d1117]/60 rounded-lg p-4 card-hover"
                 >
-                  <div className="text-2xl mb-2">{t.icon}</div>
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    style={{
+                      background: `${t.color}18`,
+                      border: `1px solid ${t.color}30`,
+                      boxShadow: `0 0 10px ${t.color}15`,
+                    }}
+                  >
+                    {t.icon(t.color)}
+                  </div>
                   <div className="font-display font-semibold text-sm text-[#c9d8e8] mb-1">{t.label}</div>
                   <div className="font-mono text-[11px] text-[#4a6380]">{t.desc}</div>
                 </div>
