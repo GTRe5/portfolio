@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --font-mono: "Space Mono", monospace;
@@ -226,4 +226,239 @@ body {
     transparent 1px
   );
   background-size: 24px 24px;
+}
+
+/* ============================================================
+   ROPE TOGGLE — physics animations
+   ============================================================ */
+
+@keyframes ropePull {
+  0%   { transform: translateY(0px);    }
+  22%  { transform: translateY(16px);   }  /* peak pull-down */
+  44%  { transform: translateY(-6px);   }  /* spring overshoot */
+  60%  { transform: translateY(3.5px);  }
+  74%  { transform: translateY(-1.5px); }
+  86%  { transform: translateY(0.5px);  }
+  100% { transform: translateY(0px);    }  /* settled */
+}
+
+@keyframes ropeIdleSway {
+  0%, 100% { transform: rotate(-2.4deg); }
+  50%       { transform: rotate(2.4deg);  }
+}
+
+.rope-idle {
+  animation: ropeIdleSway 3.5s ease-in-out infinite;
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.rope-pull {
+  animation: ropePull 0.85s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+  transform-origin: top center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rope-idle { animation: none; }
+  .rope-pull { animation: none; }
+}
+
+/* ============================================================
+   THEME TRANSITION — smooth colour switching
+   ============================================================ */
+
+body,
+nav,
+section,
+footer,
+main,
+header,
+input,
+textarea,
+select,
+.card-hover {
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    color 0.25s ease !important;
+}
+
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+
+html.light {
+  color-scheme: light;
+  --bg: #eef2f7;
+  --surface: #f4f7fb;
+  --border: #c5d4e5;
+  --text: #1a2d3d;
+  --muted: #5a7090;
+}
+
+html.light body {
+  background: #eef2f7;
+  color: #1a2d3d;
+}
+
+/* ── Noise overlay is too heavy on light ── */
+html.light .noise::after {
+  opacity: 0.06;
+}
+
+/* ── Scan line barely visible ── */
+html.light .scan-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 110, 160, 0.03),
+    transparent
+  );
+}
+
+/* ── Grid pattern ── */
+html.light .bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 110, 160, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 110, 160, 0.055) 1px, transparent 1px);
+}
+
+/* ── Dot grid ── */
+html.light .dot-grid {
+  background-image: radial-gradient(
+    rgba(0, 100, 180, 0.08) 1px,
+    transparent 1px
+  );
+}
+
+/* ── h-line ── */
+html.light .h-line {
+  background: linear-gradient(90deg, transparent, #c5d4e5, transparent);
+}
+
+/* ── Glow text ── */
+html.light .glow-text {
+  text-shadow: 0 0 20px rgba(0, 122, 153, 0.4);
+}
+
+/* ── Glow cyan button ── */
+html.light .glow-cyan {
+  box-shadow:
+    0 0 20px rgba(0, 122, 153, 0.25),
+    0 0 60px rgba(0, 122, 153, 0.07);
+}
+
+/* ── Gradient text ── */
+html.light .gradient-text {
+  background: linear-gradient(135deg, #007a99 0%, #5b21b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card hover ── */
+html.light .card-hover:hover {
+  border-color: rgba(0, 130, 160, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(0, 80, 150, 0.1);
+}
+
+/* ── Scrollbar ── */
+html.light ::-webkit-scrollbar-track { background: #eef2f7; }
+html.light ::-webkit-scrollbar-thumb { background: #c5d4e5; border-radius: 2px; }
+html.light ::-webkit-scrollbar-thumb:hover { background: #007a99; }
+
+/* ============================================================
+   LIGHT THEME — Background class overrides
+   ============================================================ */
+
+html.light .bg-\[\#080c10\]        { background-color: #eef2f7 !important; }
+html.light .bg-\[\#0d1117\]        { background-color: #f4f7fb !important; }
+html.light .bg-\[\#111820\]        { background-color: #e8eef6 !important; }
+html.light .bg-\[\#0d1820\]        { background-color: #ecf1f8 !important; }
+html.light .bg-\[\#080c10\]\/90    { background-color: rgba(238,242,247,0.92) !important; }
+html.light .bg-\[\#0d1117\]\/60    { background-color: rgba(244,247,251,0.85) !important; }
+html.light .bg-\[\#111820\]\/60    { background-color: rgba(232,238,246,0.85) !important; }
+html.light .bg-\[\#111820\]\/80    { background-color: rgba(232,238,246,0.92) !important; }
+
+/* ── Cyan / amber tint bgs ── */
+html.light .bg-\[\#00e5ff\]\/5     { background-color: rgba(0, 122, 153, 0.07) !important; }
+html.light .bg-\[\#00e5ff\]\/10    { background-color: rgba(0, 122, 153, 0.12) !important; }
+html.light .bg-\[\#a78bfa\]\/5     { background-color: rgba(109, 40, 217, 0.07) !important; }
+html.light .bg-\[\#ffb300\]\/5     { background-color: rgba(138, 96, 0, 0.07) !important; }
+html.light .bg-\[\#f87171\]\/5     { background-color: rgba(220, 38, 38, 0.07) !important; }
+
+/* ── Solid bg overrides ── */
+html.light .bg-\[\#00e5ff\]        { background-color: #007a99 !important; }
+
+/* ============================================================
+   LIGHT THEME — Text class overrides
+   ============================================================ */
+
+html.light .text-white             { color: #1a2d3d !important; }
+html.light .text-\[\#c9d8e8\]      { color: #2a3d55 !important; }
+html.light .text-\[\#4a6380\]      { color: #5a7090 !important; }
+html.light .text-\[\#2a3f55\]      { color: #8099b3 !important; }
+html.light .text-\[\#1e2d3d\]      { color: #c5d4e5 !important; } /* decorative */
+
+/* Cyan — darken for contrast on light bg */
+html.light .text-\[\#00e5ff\]      { color: #007a99 !important; }
+
+/* Amber — darken for contrast on light bg */
+html.light .text-\[\#ffb300\]      { color: #8a6000 !important; }
+
+/* ============================================================
+   LIGHT THEME — Border class overrides
+   ============================================================ */
+
+html.light .border-\[\#1e2d3d\]    { border-color: #c5d4e5 !important; }
+
+/* Cyan borders */
+html.light .border-\[\#00e5ff\]\/20 { border-color: rgba(0,122,153,0.28) !important; }
+html.light .border-\[\#00e5ff\]\/30 { border-color: rgba(0,122,153,0.38) !important; }
+html.light .border-\[\#00e5ff\]\/40 { border-color: rgba(0,122,153,0.5) !important; }
+html.light .border-\[\#00e5ff\]\/60 { border-color: rgba(0,122,153,0.65) !important; }
+
+/* Amber borders */
+html.light .border-\[\#ffb300\]\/20 { border-color: rgba(138,96,0,0.28) !important; }
+
+/* Violet / purple borders */
+html.light .border-\[\#a78bfa\]\/20 { border-color: rgba(109,40,217,0.25) !important; }
+html.light .border-\[\#a78bfa\]\/50 { border-color: rgba(109,40,217,0.5) !important; }
+
+/* ============================================================
+   LIGHT THEME — Form inputs
+   ============================================================ */
+
+html.light input,
+html.light textarea {
+  background-color: #f0f5fb !important;
+  border-color: #c5d4e5 !important;
+  color: #1a2d3d !important;
+}
+
+html.light input:focus,
+html.light textarea:focus {
+  border-color: rgba(0,122,153,0.55) !important;
+  background-color: #f8fafd !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #8099b3 !important;
+}
+
+html.light select {
+  background-color: #f0f5fb !important;
+  border-color: #c5d4e5 !important;
+  color: #1a2d3d !important;
+}
+
+html.light select:focus {
+  border-color: rgba(0,122,153,0.55) !important;
+}
+
+html.light select option {
+  background-color: #f4f7fb;
+  color: #1a2d3d;
 }
