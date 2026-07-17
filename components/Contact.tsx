@@ -64,8 +64,8 @@ function KaggleIcon({ size = 18, className }: BrandIconProps) {
 const contactLinks = [
   {
     label: "Email",
-    value: "hungpro123b@email.com",
-    href: "mailto:hungpro123b@email.com",
+    value: "hungpro123b@gmail.com",
+    href: "mailto:hungpro123b@gmail.com",
     icon: Mail,
     color: "#00e5ff",
   },

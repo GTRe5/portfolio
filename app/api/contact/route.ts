@@ -93,7 +93,7 @@ export async function POST(req: Request) {
      * change this to e.g. 'Portfolio <contact@yourdomain.com>'
      */
     from   : 'Portfolio Contact <onboarding@resend.dev>',
-    to     : 'hungpro123b@email.com',
+    to     : 'hungpro123b@gmail.com',
     replyTo: email.trim(),
     subject: `[Portfolio] ${subject} — from ${name}`,
     html   : buildEmailHtml({ name, email, subject, message }),
